@@ -1,0 +1,32 @@
+var Player : Transform;
+var MoveSpeed = 4;
+var MinDist =5;
+var MaxDist = 10;
+
+function OnTriggerEnter(other : Collider) {
+ if(other.tag == "Player") {
+ bool = true;
+}
+}
+
+function Update () 
+       {
+           //Moves towrd player
+          transform.LookAt (Player);
+     
+     
+     var dist = Vector3.Distance(transform.position, Player.position);
+ 
+ // if dist less than the max distance ( i am assuming the max distance id the trigger to chase or to stay idle)
+     if( dist <= MaxDist) {
+                
+                transform.position += transform.forward * MoveSpeed*Time.deltaTime;
+       }  // first if ends
+ 
+ //   if the distance between them less than the minimum allowed destroy it
+                if( dist <= MinDist)
+                    {
+                       Destroy(this.gameObject);
+                    } // second if ends
+     
+     } // update ends
