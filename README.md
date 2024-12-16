@@ -1,2 +1,1 @@
-# Cs-Scripts
-Common Scripts for Unity 
+# Collections of C# Scripts for Unity
